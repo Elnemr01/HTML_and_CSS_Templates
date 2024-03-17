@@ -1,0 +1,344 @@
+* {
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+
+.card {
+    margin: 50px auto;
+    position: relative;
+    width: 550px;
+    height: 300px;
+    border-radius: 25px;
+    transform-style: preserve-3d;
+    transform-origin: right center;
+    perspective: 800px;
+    transition: 1s;
+}
+
+.card:hover {
+    transform:  translateX(-100%) rotateY(-180deg);
+}
+
+.card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    border-radius: inherit;
+    backface-visibility: hidden;
+}
+/* ------------back face ------------ */
+.card .back {
+    background-color: darkslategrey;
+    transform: rotateY(180deg);
+}
+
+.card .back .text {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 2px;
+    padding: 5px 20px;
+    font-size: x-small;
+    width: 100%;
+}
+
+.black {
+    background-color: black;
+    position: absolute;
+    top: 22px;
+    width: 100%;
+    height: 55px;
+}
+
+.two-divs {
+    display: grid;
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    justify-content: space-between;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.two-divs div:first-child {
+    grid-column: 1 / span 2;
+    font-size: small;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding-left: 11px;
+
+}
+
+.two-divs div:last-child {
+    font-size: x-small;
+    transform: translateY(1px);
+    padding-left: 10px;
+}
+
+.secrt-num {
+    background-color: #EEE;
+    position: absolute;
+    top: 105px;
+    left: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    width: 320px;
+    color: black;
+    padding-right: 5px;
+    height: 40px;
+
+}
+
+.signed-no {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 151px;
+    left: 11px;
+    font-size: x-small;
+}
+
+.four-ele {
+    position: absolute;
+    left: 10px;
+    top: 190px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.rotate {
+    transform: translate(-30px, -13px) rotate(90deg);
+    font-size: 6px;
+}
+
+.skew {
+    font-size: 7px;
+    transform: translate(10px) skewX(-45deg);
+}
+
+.skew p:first-child {
+    background-color: orangered;
+    color: white;
+    border-bottom: 3px solid white;
+    padding: 2px 2px 0 2px;
+}
+
+.skew p:empty {
+    background-color: brown;
+    height: 10px;
+    border-bottom: 2px solid white;
+}
+
+.skew p:last-child {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+
+.mada {
+    transform: translateX(60px);
+}
+
+.mada p::before {
+    content: '';
+    background-color: white;
+    display: inline-block;
+    width: 25px;
+    height: 8px;
+    transform: translateX(-3px);
+}
+
+.circle {
+    background-color: #EEE;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: translateX(40px);
+}
+
+.circle::before {
+    content: '';
+    background-color: #9E9E9E;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    transform: translate(10px,10px);
+    display: inline-block;
+}
+
+.circle::after {
+    content: '';
+    display: inline-block;
+    background-color: #9E9E9E;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: translate(-32px, -44px);
+}
+
+/* --------------------front face---------------- */
+
+.card .front {
+    background-color: darkslategrey;
+}
+
+.card .front .head {
+    padding: 35px 25px 10px 10px;
+    text-align: end;
+    font-size: 20px;
+    font-weight: 900;
+    position: relative;
+}
+
+.card .front .head::before {
+    content: '';
+    position: absolute;
+    width: 19px;
+    height: 27px;
+    background-color: transparent;
+    top: 20px;
+    border-top: 5px solid white;
+    right: 70px;
+    border-radius: 45%;
+}
+
+.card .front .head span { 
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.card .front main {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 27px 0 15px;
+}
+
+.card .front main .top {
+    display: flex;
+    align-items: center;
+}
+
+.card .front main .top .triangle p {
+    width: 15px;
+    height: 5px;
+    background: white;
+    margin-bottom: 7px;
+}
+
+.card .front main .top .scan {
+    width: 45px;
+    height: 30px;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 30px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: black;
+}
+
+.card .front main .top .scan div {
+    background-color: #9E9E9E;
+}
+
+.card .front main .top .wifi {
+    position: relative;
+    margin: 6px 0 0 -4px;
+}
+
+.card .front main .top .wifi i {
+    transform: rotate(90deg);
+    margin: 0px 0 10px 20px;
+    font-size: 21px;
+}
+
+.card .front main .tail .mada {
+    transform: translateX(0);
+}
+
+.card .front .num {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.card .front .num li {
+    margin: 0 27px;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #bebebe;
+    position: relative;
+}
+
+.card .front .num li:first-child::before {
+    content: '1234';
+    position: absolute;
+    left: 10px;
+    color: #000000b0;
+    font-size: 10px;
+    bottom: -10px;
+    letter-spacing: 1px;
+}
+
+footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .name {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+footer .name p:first-child {
+    margin-right: 16px;
+}
+
+footer .date {
+    position: relative;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+footer .date::before {
+    content: "expires end of";
+    position: absolute;
+    font-size: 7px;
+    left: -55%;
+    max-width: 30px;
+    letter-spacing: 0;
+}
+
+footer .circle {
+    background-color: #ffa500db;
+}
+
+footer .circle::before {
+    background-color: transparent;
+}
+
+footer .circle::after {
+    background-color: #ff0000ab
+}
